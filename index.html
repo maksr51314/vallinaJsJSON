@@ -1,32 +1,19 @@
 <!doctype html>
-        <html>
+<html>
 <head>
-    <title>JSON vallina</title>
-    <script src="js/vendor/vanilla.js"></script>
+    <title>load JSON with ajax</title>
 </head>
 <body>
 
-<script>
-    var data = "json="+JSON.encode({
-        text: 'some text',
-        array: [1, 2, 'three'],
-        object: {
-            par1: 'another text',
-            par2: [3, 2, 'one'],
-            par3: {}
-        }
-    });
-    xhr = new XMLHttpRequest();
+<table>
+    <tr><th>Name</th><th>Country</th></tr>
+    <tr><td><div id="Name">Sachin</div></td>
+        <td><div id="Country">India</div></td></tr>
+</table>
 
-    xhr.open('POST', '/echo/json/', true);
-    xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    xhr.send(data);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4) {
-            console.log(xhr.responseText);
-        }
-    };
-</script>
-
+<div>
+    <button onclick="loadJSON()">Update Details </button>
+</div>
+<script src="js/main.js"></script>
 </body>
-        </html>
+</html>
